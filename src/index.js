@@ -17,12 +17,14 @@ app.use('/', express.static(path.join(__dirname, "../public")));
 io.on('connection', (socket) => {
     console.log('a user connected', socket.id);
 
-    setInterval(() => {
-        socket.emit("Hello_Event", "Hello from Socket.io server...");
-    }, 3000);
+    socket.on('msg_send', (data) => {
+        console.log(data);
 
-    socket.on("Btn-Click", (args) => {
-        console.log(args);
+        /*== io.emit() is used to broadcast a message to all connected clients. It sends an event and its associated data to every client currently connected to the server ==*/
+
+        // io.emit('msg_rcvd', data);
+        // socket.emoty('msg_rcvd', data);
+        socket.broadcast.emit('msg_rcvd', data);
     })
 });
 

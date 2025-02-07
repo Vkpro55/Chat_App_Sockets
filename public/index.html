@@ -9,10 +9,18 @@
 
 <body>
     <h1>Chat-App using Socket.io</h1>
+
     <div class="buttons">
-        <button id="btn">Send Me</button>
+        <input type="text" name="newMsg" id="newMsg">
+        <button id="send-btn">Send</button>
     </div>
-    <div id="root"></div>
+
+    <div class="group-chat">
+        <ul id="msglist">
+
+        </ul>
+    </div>
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./script.js"></script>

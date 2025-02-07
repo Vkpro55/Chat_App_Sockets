@@ -1,14 +1,19 @@
 var socket = io();
 
-socket.on("Hello_Event", (arg) => {
-    const div = document.createElement('div');
-    div.innerText = arg;
+let btn = document.getElementById('send-btn');
+let inputMsg = document.getElementById('newMsg');
+let msgList = document.getElementById('msglist');
 
-    const root = document.getElementById('root');
-    root.appendChild(div);
-});
-
-const btn = document.getElementById('btn');
 btn.onclick = function exec() {
-    socket.emit("Btn-Click", { name: "Vinod Kumar" });
+    socket.emit('msg_send', {
+        msg: inputMsg.value
+    });
 };
+
+
+socket.on('msg_rcvd', (data) => {
+    let li = document.createElement('li');
+    li.innerText = data.msg;
+
+    msgList.appendChild(li);
+})
