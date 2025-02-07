@@ -1,0 +1,17 @@
+{
+  "name": "chat_app_socket",
+  "version": "1.0.0",
+  "description": "Chat Application Sockets with Engineering Problems",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon src/index.js"
+  },
+  "author": "Vinod Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "socket.io": "^4.8.1"
+  }
+}
