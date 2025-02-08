@@ -10,16 +10,16 @@
 <body>
     <h1>Chat-App using Socket.io</h1>
 
-    <div class="buttons">
-        <input type="text" name="newMsg" id="newMsg">
-        <button id="send-btn">Send</button>
-    </div>
 
-    <div class="group-chat">
-        <ul id="msglist">
+    <input type="text" name="roomId" id="roomId" placeholder="roomId...">
+    <input type="text" name="userId" id="userId" placeholder="userId...">
+    <input type="text" name="newMsg" id="newMsg" placeholder="messages...">
+    <button id="send-btn">Send</button>
 
-        </ul>
-    </div>
+    <ul id="msglist">
+
+    </ul>
+
 
 
     <script src="/socket.io/socket.io.js"></script>
